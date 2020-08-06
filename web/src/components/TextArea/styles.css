@@ -1,0 +1,44 @@
+.textarea-block {
+    position: relative;
+}
+
+/*para todo textarea-block para que depois dele tem outro*/
+
+.textarea-block+.textarea-block {
+    margin-top: 1.4rem;
+}
+
+.textarea-block label {
+    font-size: 1.4rem;
+}
+
+.textarea-block textarea {
+    width: 100%;
+    height: 16rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    outline: 0;
+    /*permite aumentar o tamanho na vertical*/
+    resize: vertical;
+    /*min-height para que o usuario não diminua muito o tamanho*/
+    min-height: 8rem;
+    padding: 1.2rem 1.6rem;
+    font: 1.6rem Archivo
+}
+
+/*estilizar o textarea-block quando o textarea estiver com foco. o focus.within se dentro da classe existe um textarea com focus
+ o after ira inserir um elemento quando o textarea dentro dele estiver com focus
+*/
+
+.textarea-block:focus-within::after {
+    width: calc(100% - 3.2rem);
+    height: 2px;
+    content: '';
+    background: var(--color-primary-light);
+    position: absolute;
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 7px
+}
