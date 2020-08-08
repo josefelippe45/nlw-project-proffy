@@ -118,7 +118,7 @@ const TeacherForm = () => {
                             /**a propriedade options é criada from scratch, do zero */
                             options={[
                                 { value: 'Artes', label: 'Artes' },
-                                { value: 'Biología', label: 'Biología' },
+                                { value: 'Biologia', label: 'Biologia' },
                                 { value: 'Ciências', label: 'Ciências' },
                                 { value: 'Educação Física', label: 'Educação Física' },
                                 { value: 'Fisíca', label: 'Fisíca' },
