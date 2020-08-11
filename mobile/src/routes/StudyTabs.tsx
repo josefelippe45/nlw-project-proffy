@@ -3,8 +3,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons'
 import { Platform } from 'react-native'
 
-import TeacherList from '../TeacherList';
-import Favorites from '../Favorites';
+import TeacherList from '../views/TeacherList';
+import Favorites from '../views/Favorites';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { View, Image, Text } from 'react-native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
@@ -8,12 +8,14 @@ import backIcon from '../../assets/images/icons/back.png'
 import logoImg from '../../assets/images/logo.png';
 
 //definindo algumas props pra const PageHeader
-interface PageHeaderProps{
+interface PageHeaderProps {
     title: string;
+    /**ReactNode faz com que ele receba um componente react */
+    headerRight?: ReactNode;
 }
-const PageHeader:React.FC<PageHeaderProps> = (props) => {
+const PageHeader: React.FC<PageHeaderProps> = (props) => {
     const navigation = useNavigation();
-    const handleGoBack = ()=>{
+    const handleGoBack = () => {
         navigation.navigate('Landing')
     }
     return (
@@ -22,9 +24,14 @@ const PageHeader:React.FC<PageHeaderProps> = (props) => {
                 <BorderlessButton onPress={handleGoBack}>
                     <Image source={backIcon} resizeMode='contain' />
                 </BorderlessButton>
-                <Image source={logoImg} resizeMode='contain'/>
+                <Image source={logoImg} resizeMode='contain' />
             </View>
-            <Text style={styles.title}>{props.title /**recebe o titulo passado como title */}</Text>
+            <View style={styles.header}>
+                <Text style={styles.title}>{props.title /**recebe o titulo passado como title */}</Text>
+                {props.headerRight}
+
+            </View>
+            {props.children}
         </View>
     );
 }
